@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ['Syne', 'system-ui', 'sans-serif'],
         body: ['Syne', 'system-ui', 'sans-serif'],
+        ghivar: ['Ghivar', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoWordMark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -34,12 +35,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container px-6 md:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-ivory">
-              Arcnet<span className="text-neural">Labs</span>
-            </span>
+            <img 
+              src={logoWordMark} 
+              alt="Arcnet Labs" 
+              className="h-10 md:h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

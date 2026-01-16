@@ -6,7 +6,22 @@
    Brand: Futuristic, Intelligent, Engineering-led, Minimal but Powerful
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+/* Local Fonts */
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ghivar';
+  src: url('./assets/fonts/ghivar.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -116,6 +131,34 @@
       linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 60px 60px;
+  }
+
+  .brand-pattern-1 {
+    background-image: url('../assets/patterns/Brand Pattern 1.svg');
+    background-size: 500px 500px;
+    background-repeat: repeat;
+    opacity: 0.1;
+  }
+
+  .brand-pattern-2 {
+    background-image: url('../assets/patterns/Brand Pattern 2.svg');
+    background-size: 500px 500px;
+    background-repeat: repeat;
+    opacity: 0.1;
+  }
+
+  .brand-pattern-bg {
+    background-image: url('../assets/patterns/Brand Pattern 1.svg');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-position: 0 0;
+  }
+
+  .brand-pattern-bg-2 {
+    background-image: url('../assets/patterns/Brand Pattern 2.svg');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-position: 0 0;
   }
 
   .noise-overlay {

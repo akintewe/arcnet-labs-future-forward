@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Brain, Zap, Layers, Workflow } from "lucide-react";
+import brandPattern2 from "@/assets/patterns/Brand Pattern 2.svg";
 
 const features = [
   {
@@ -34,6 +35,24 @@ const AboutSection = () => {
     <section id="about" className="relative py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 right-0 section-divider" />
+      {/* Moving Brand Pattern 2 */}
+      <motion.div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `url(${brandPattern2})`,
+          backgroundSize: '400px 400px',
+          backgroundRepeat: 'repeat',
+        }}
+        animate={{ 
+          backgroundPosition: ["0% 0%", "100% 100%"],
+        }}
+        transition={{ 
+          duration: 25, 
+          repeat: Infinity, 
+          repeatType: "reverse",
+          ease: "linear"
+        }}
+      />
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-quantum/20 blur-[150px] -translate-y-1/2" />
       
       <div className="container px-6 md:px-8" ref={ref}>

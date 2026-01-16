@@ -2,25 +2,37 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import brandPattern1 from "@/assets/patterns/Brand Pattern 1.svg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Brand Pattern Background - Prominent */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `url(${brandPattern1})`,
+          backgroundSize: '400px 400px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '0 0',
+        }}
+      />
+      
+      {/* Background Image Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
       
       {/* Animated Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-neural/10 blur-[120px] animate-pulse-glow" />
       
       {/* Grid Pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 grid-pattern opacity-15" />
       
       {/* Noise Overlay */}
       <div className="absolute inset-0 noise-overlay" />
