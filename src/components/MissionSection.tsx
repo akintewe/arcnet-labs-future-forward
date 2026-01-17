@@ -8,13 +8,11 @@ const MissionSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const words = [
-    "To accelerate",
-    "the future of work",
-    "by engineering AI systems",
-    "that automate the repetitive,",
-    "enhance human creativity,",
-    "and unlock new levels of",
-    "efficiency and intelligence."
+    "To build practical,",
+    "scalable AI systems",
+    "that meaningfully improve",
+    "how people think, work,",
+    "and interact with technology."
   ];
 
   return (

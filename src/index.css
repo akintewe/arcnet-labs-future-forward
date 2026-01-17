@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Arcnet Labs Design System
-   Brand: Futuristic, Intelligent, Engineering-led, Minimal but Powerful
+   Brand: Futuristic, AI-First, Engineering-led, Minimal but Powerful
 */
 
 /* Local Fonts */
@@ -25,14 +25,14 @@
 
 @layer base {
   :root {
-    /* Arcnet Labs Brand Colors (HSL) */
+    /* Arcnet Labs Brand Colors (HSL) - Dark Mode */
     --orbit-blue: 216 97% 11%;
     --quantum-indigo: 252 33% 24%;
     --neural-violet: 285 38% 48%;
     --soft-rose: 350 47% 84%;
     --ambient-ivory: 43 100% 95%;
     
-    /* Core tokens */
+    /* Core tokens - Dark Mode */
     --background: 216 97% 6%;
     --foreground: 43 100% 95%;
 
@@ -63,13 +63,13 @@
 
     --radius: 0.75rem;
 
-    /* Gradients */
+    /* Gradients - Dark Mode */
     --gradient-hero: linear-gradient(135deg, hsl(216 97% 6%) 0%, hsl(252 33% 15%) 50%, hsl(216 97% 8%) 100%);
     --gradient-violet: linear-gradient(135deg, hsl(285 38% 48% / 0.3) 0%, hsl(252 33% 24% / 0.5) 100%);
     --gradient-glow: radial-gradient(ellipse at center, hsl(285 38% 48% / 0.15) 0%, transparent 70%);
     --gradient-rose: linear-gradient(135deg, hsl(350 47% 84% / 0.1) 0%, hsl(285 38% 48% / 0.1) 100%);
     
-    /* Shadows */
+    /* Shadows - Dark Mode */
     --shadow-glow: 0 0 60px hsl(285 38% 48% / 0.3);
     --shadow-card: 0 4px 24px hsl(216 97% 6% / 0.5);
     --shadow-elevated: 0 8px 40px hsl(216 97% 6% / 0.8);
@@ -77,6 +77,55 @@
     /* Typography */
     --font-heading: 'Syne', system-ui, sans-serif;
     --font-body: 'Syne', system-ui, sans-serif;
+  }
+
+  .light {
+    /* Arcnet Labs Brand Colors (HSL) - Light Mode */
+    --orbit-blue: 216 97% 25%;
+    --quantum-indigo: 252 33% 45%;
+    --neural-violet: 285 38% 55%;
+    --soft-rose: 350 47% 65%;
+    --ambient-ivory: 43 20% 15%;
+    
+    /* Core tokens - Light Mode */
+    --background: 43 100% 98%;
+    --foreground: 216 97% 11%;
+
+    --card: 43 50% 96%;
+    --card-foreground: 216 97% 11%;
+
+    --popover: 43 50% 97%;
+    --popover-foreground: 216 97% 11%;
+
+    --primary: 285 38% 55%;
+    --primary-foreground: 43 100% 98%;
+
+    --secondary: 252 33% 45%;
+    --secondary-foreground: 43 100% 98%;
+
+    --muted: 43 20% 92%;
+    --muted-foreground: 216 30% 40%;
+
+    --accent: 350 47% 65%;
+    --accent-foreground: 43 100% 98%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 43 100% 98%;
+
+    --border: 43 20% 88%;
+    --input: 43 20% 88%;
+    --ring: 285 38% 55%;
+
+    /* Gradients - Light Mode */
+    --gradient-hero: linear-gradient(135deg, hsl(43 100% 98%) 0%, hsl(43 50% 96%) 50%, hsl(43 100% 99%) 100%);
+    --gradient-violet: linear-gradient(135deg, hsl(285 38% 55% / 0.2) 0%, hsl(252 33% 45% / 0.3) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(285 38% 55% / 0.1) 0%, transparent 70%);
+    --gradient-rose: linear-gradient(135deg, hsl(350 47% 65% / 0.15) 0%, hsl(285 38% 55% / 0.15) 100%);
+    
+    /* Shadows - Light Mode */
+    --shadow-glow: 0 0 40px hsl(285 38% 55% / 0.2);
+    --shadow-card: 0 4px 24px hsl(216 97% 11% / 0.1);
+    --shadow-elevated: 0 8px 40px hsl(216 97% 11% / 0.15);
   }
 }
 
@@ -94,6 +143,7 @@
     font-family: var(--font-body);
     background: var(--gradient-hero);
     background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {

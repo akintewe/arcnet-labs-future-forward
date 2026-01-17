@@ -7,23 +7,23 @@ import brandPattern2 from "@/assets/patterns/Brand Pattern 2.svg";
 const features = [
   {
     icon: Brain,
-    title: "AI-First Mindset",
-    description: "Every solution we build starts with intelligence at its core."
+    title: "AI as Foundation",
+    description: "AI is not just the future — it is the foundation upon which we build everything."
   },
   {
     icon: Zap,
-    title: "Intelligent Automation",
-    description: "Streamlining complex workflows with smart, adaptive systems."
+    title: "Speed & Iteration",
+    description: "Speed, clarity, and iteration beat over-engineering. We prioritize real-world usefulness."
   },
   {
     icon: Workflow,
-    title: "Agentic Systems",
-    description: "Autonomous agents that learn, adapt, and execute with precision."
+    title: "Human-in-the-Loop",
+    description: "Human-in-the-loop design matters. The best AI amplifies human judgment."
   },
   {
     icon: Layers,
-    title: "Scalable Architecture",
-    description: "Built to grow from prototype to production seamlessly."
+    title: "Modular & Adaptable",
+    description: "Systems should be modular, adaptable, and continuously improving."
   }
 ];
 
@@ -68,12 +68,13 @@ const AboutSection = () => {
               About Arcnet Labs
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
-              Engineering Intelligence
+              AI-First Engineering Lab
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We are a specialized AI engineering lab focused on building products that don't just 
-              use artificial intelligence — they're defined by it. From concept to deployment, 
-              we engineer systems that think, learn, and evolve.
+              ArcnetLabs operates as both a product studio building internal AI products, 
+              and a solutions lab delivering custom AI systems and automation for clients. 
+              We design, prototype, and develop AI-powered products and systems that help people 
+              work smarter, make better decisions, and unlock new capabilities.
             </p>
           </motion.div>
 

@@ -13,7 +13,7 @@ import {
 const offerings = [
   {
     icon: Bot,
-    title: "Intelligent Automation Tools",
+    title: "AI-Powered Automation Tools",
     description: "End-to-end workflow automation that eliminates repetitive tasks and accelerates productivity.",
     gradient: "from-neural/20 to-quantum/20"
   },
@@ -38,7 +38,7 @@ const offerings = [
   {
     icon: Gamepad2,
     title: "Gaming AI Products",
-    description: "Intelligent systems for game development, player analytics, and immersive experiences.",
+    description: "AI systems for game development, player analytics, and immersive experiences.",
     gradient: "from-rose/20 to-quantum/20"
   },
   {
@@ -72,7 +72,7 @@ const WhatWeBuildSection = () => {
               What We Build
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
-              Intelligent Products
+              AI Products
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From autonomous agents to enterprise platforms, we engineer 

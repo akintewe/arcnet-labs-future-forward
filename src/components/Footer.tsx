@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoWordMark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
 
 const Footer = () => {
   return (
@@ -13,11 +14,13 @@ const Footer = () => {
               transition={{ duration: 0.8 }}
               className="text-center md:text-left"
             >
-              <h3 className="text-2xl font-bold text-ivory mb-2">
-                Arcnet<span className="text-neural">Labs</span>
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Engineering the future of intelligent systems.
+              <img 
+                src={logoWordMark} 
+                alt="Arcnet Labs" 
+                className="h-16 md:h-20 lg:h-24 w-auto mb-3 mx-auto md:mx-0"
+              />
+              <p className="text-base md:text-lg text-muted-foreground">
+                Engineering the future of AI systems.
               </p>
             </motion.div>
 
@@ -28,7 +31,7 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap items-center justify-center gap-8"
             >
-              {["About", "Work", "Philosophy", "Contact"].map((item) => (
+              {["About", "Products", "Services", "Philosophy", "Contact"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}

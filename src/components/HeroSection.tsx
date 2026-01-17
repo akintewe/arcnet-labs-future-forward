@@ -58,9 +58,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
           >
-            <span className="text-gradient">Designing the</span>
+            <span className="text-gradient">Building Practical AI</span>
             <br />
-            <span className="text-ivory">Future of Work</span>
+            <span className="text-ivory">for Everyone</span>
           </motion.h1>
 
           {/* Subtext */}
@@ -70,8 +70,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            An AI-first engineering lab building intelligent products 
-            and automation systems that transform how teams work.
+            We design, prototype, and develop AI-powered products and systems 
+            that help people work smarter, make better decisions, and unlock new capabilities 
+            through automation and AI agents.
           </motion.p>
 
           {/* CTAs */}
@@ -81,12 +82,16 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="hero" size="xl" className="group">
-              Explore Our Work
+            <Button variant="hero" size="xl" className="group" onClick={() => {
+              document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Explore Products
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="heroOutline" size="xl">
-              Get in Touch
+            <Button variant="heroOutline" size="xl" onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Work With Us
             </Button>
           </motion.div>
         </div>

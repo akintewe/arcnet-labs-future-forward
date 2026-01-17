@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logoWordMark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
+  { label: "Products", href: "#products" },
+  { label: "Services", href: "#services" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -46,29 +48,35 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm text-muted-foreground hover:text-ivory transition-colors relative group"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-neural group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Let's Talk
+            <ThemeToggle />
+            <Button variant="hero" size="sm" onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Work With Us
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-ivory"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -83,14 +91,21 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-lg text-muted-foreground hover:text-ivory transition-colors py-2"
+                  className="text-lg text-muted-foreground hover:text-foreground transition-colors py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="mt-4">
-                Let's Talk
+              <div className="flex items-center justify-between pt-2">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
+              <Button variant="hero" size="lg" className="mt-4" onClick={() => {
+                setIsMobileMenuOpen(false);
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
+                Work With Us
               </Button>
             </div>
           </motion.nav>
