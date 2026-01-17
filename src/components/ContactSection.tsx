@@ -52,7 +52,6 @@ const ContactSection = () => {
         message: "",
       });
       
-      setIsFormOpen(false);
     } catch (error) {
       toast({
         title: "Error",
@@ -65,7 +64,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-32 overflow-hidden scroll-mt-28">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-no-repeat opacity-60"

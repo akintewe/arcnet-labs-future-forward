@@ -97,14 +97,13 @@ const ServicesSection = () => {
             <Button
               variant="hero"
               size="xl"
+              type="button"
               className="group"
               onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  // Scroll to contact section
-                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  // Update URL hash
-                  window.history.pushState(null, '', '#contact');
+                const el = document.getElementById("contact");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  window.history.pushState(null, "", "#contact");
                 }
               }}
             >
