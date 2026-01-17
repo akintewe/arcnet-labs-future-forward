@@ -99,11 +99,13 @@ const ServicesSection = () => {
               size="xl"
               className="group"
               onClick={() => {
-                // Update URL hash and scroll
-                window.location.hash = 'contact';
-                setTimeout(() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  // Scroll to contact section
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  // Update URL hash
+                  window.history.pushState(null, '', '#contact');
+                }
               }}
             >
               Discuss Your Project

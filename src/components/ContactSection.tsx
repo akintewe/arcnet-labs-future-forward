@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -12,7 +12,6 @@ import contactBg from "@/assets/images/social-media/arc Lab 14.png";
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -22,24 +21,6 @@ const ContactSection = () => {
     message: "",
   });
   const { toast } = useToast();
-
-  // Check if URL has hash to open form
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === "#contact") {
-        setIsFormOpen(true);
-        // Scroll to section
-        setTimeout(() => {
-          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -174,8 +155,8 @@ const ContactSection = () => {
                       placeholder="your@email.com"
                       className="bg-background/50 border-neural/30"
                     />
-                  </div>
-                </div>
+        </div>
+      </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
