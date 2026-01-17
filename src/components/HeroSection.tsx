@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import brandPattern1 from "@/assets/patterns/Brand Pattern 1.svg";
 
@@ -47,7 +47,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neural/30 bg-neural/10 backdrop-blur-sm mb-8"
           >
-            <Sparkles className="w-4 h-4 text-neural" />
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm text-ivory/80">AI-First Engineering Lab</span>
           </motion.div>
 

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Workflow, BarChart3, Zap, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, Workflow, BarChart3, Zap } from "lucide-react";
 
 const services = [
   {
@@ -59,7 +59,7 @@ const ServicesSection = () => {
               We build using the same frameworks and principles that power our own products.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neural/30 bg-neural/10 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-neural" />
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <span className="text-sm text-ivory/80">Selective • High-Quality • AI-First</span>
             </div>
           </motion.div>
