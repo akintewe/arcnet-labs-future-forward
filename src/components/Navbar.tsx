@@ -37,13 +37,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container px-6 md:px-8">
-        <div className="flex items-center justify-between h-24 md:h-28">
+        <div className="flex items-center justify-between h-36 md:h-40">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2 overflow-visible">
             <img 
               src={logoWordMark} 
               alt="Arcnet Labs" 
-              className="h-10 md:h-14 w-auto"
+              className="h-24 md:h-32 w-auto object-contain"
+              style={{ objectFit: 'contain', maxHeight: 'none', paddingBottom: '4px', lineHeight: '1.2' }}
             />
           </a>
 
@@ -70,12 +71,12 @@ const Navbar = () => {
           {/* Mobile Menu Button & Theme Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <button
+          <button
               className="p-2 text-foreground"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
           </div>
         </div>
 

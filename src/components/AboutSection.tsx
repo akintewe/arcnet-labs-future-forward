@@ -68,7 +68,7 @@ const AboutSection = () => {
               About Arcnet Labs
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
-              AI-First Engineering Lab
+              Product Studio & Solutions Lab
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               ArcnetLabs operates as both a product studio building internal AI products, 

@@ -6,22 +6,22 @@ const principles = [
   {
     number: "01",
     title: "AI as Foundation",
-    description: "AI is not just the future — it is the foundation upon which we build everything."
+    description: "We don't add AI as an afterthought—it's the core architecture. Every system we build assumes AI capabilities from day one, enabling capabilities that wouldn't be possible with traditional approaches."
   },
   {
     number: "02",
     title: "Human in the Loop",
-    description: "The best AI amplifies human judgment. We design for collaboration, not replacement."
+    description: "The most effective AI systems amplify human expertise rather than replace it. We design clear decision points where human judgment adds critical value, creating collaborative workflows that leverage both human intuition and AI scale."
   },
   {
     number: "03",
     title: "Fast Iteration",
-    description: "Speed is a feature. We prototype rapidly, learn quickly, and ship continuously."
+    description: "We prioritize shipping working prototypes over perfect plans. Our process emphasizes rapid cycles of build, test, learn, and refine—getting real feedback from real users in weeks, not months."
   },
   {
     number: "04",
     title: "Automation + Intelligence",
-    description: "True power emerges when smart automation meets adaptive intelligence."
+    description: "Simple automation saves time; intelligent automation transforms how work gets done. We combine rule-based automation with adaptive AI that learns patterns, handles edge cases, and improves over time."
   }
 ];
 
@@ -61,9 +61,9 @@ const PhilosophySection = () => {
           >
             <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-tight">
               <span className="text-neural">"</span>
-              AI is not just the future,
+              We don't build with AI as an add-on.
               <br />
-              <span className="text-gradient-violet">it is the foundation.</span>
+              <span className="text-gradient-violet">We build on AI as the foundation.</span>
               <span className="text-neural">"</span>
             </blockquote>
           </motion.div>

@@ -104,7 +104,7 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 drop-shadow-lg">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 drop-shadow-lg" style={{ lineHeight: '1.2', overflow: 'visible' }}>
               Let's build something
               <br />
               <span className="text-gradient-violet drop-shadow-lg">powerful.</span>

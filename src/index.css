@@ -144,11 +144,26 @@
     background: var(--gradient-hero);
     background-attachment: fixed;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     @apply font-bold tracking-tight;
+    line-height: 1.2;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  p {
+    line-height: 1.6;
+    overflow: visible;
+  }
+
+  img {
+    overflow: visible;
   }
 }
 

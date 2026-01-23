@@ -24,8 +24,8 @@ const products = [
     name: "ChessIQ",
     tagline: "Chess Intelligence for Serious Players",
     description: "A consumer-facing chess intelligence product designed to help players analyze games, improve performance, and gain deeper insights into their play.",
-    status: "Early Access",
-    statusColor: "bg-neural/20 text-neural border-neural/30",
+    status: "In Development",
+    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
     gradient: "from-neural/20 to-quantum/20",
     targetAudience: "Chess players seeking to improve their game"
   },
@@ -36,7 +36,7 @@ const products = [
     tagline: "AI-Powered Journey Intelligence",
     description: "An AI-powered journey and workflow intelligence product focused on mapping, understanding, and optimizing user or business journeys.",
     status: "In Development",
-    statusColor: "bg-rose/30 text-rose-400 border-rose/50 font-semibold",
+    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
     gradient: "from-rose/20 to-neural/20",
     targetAudience: "Teams and businesses optimizing workflows"
   },
@@ -47,7 +47,7 @@ const products = [
     tagline: "Prospect Intelligence Engine",
     description: "A prospect intelligence engine that searches the web for ideal clients, qualifies prospects, and automates personalized outreach.",
     status: "In Development",
-    statusColor: "bg-cyan-500/30 text-cyan-300 border-cyan-400/50 font-semibold",
+    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
     gradient: "from-quantum/20 to-rose/20",
     targetAudience: "Sales and business development teams"
   }

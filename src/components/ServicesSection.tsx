@@ -1,35 +1,96 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Workflow, BarChart3, Zap } from "lucide-react";
+import { ArrowRight, Bot, Workflow, BarChart3, Zap, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const services = [
   {
     icon: Bot,
     title: "AI-Powered Automation Systems",
-    description: "End-to-end workflow automation that eliminates repetitive tasks and accelerates productivity across your organization."
+    shortDescription: "End-to-end workflow automation that eliminates repetitive tasks.",
+    fullDescription: `Transform your business operations with comprehensive AI-powered automation systems. We design and implement end-to-end workflows that eliminate manual, repetitive tasks across your organization.
+
+Our automation systems integrate seamlessly with your existing tools and processes, handling everything from data entry and document processing to complex multi-step business workflows. We focus on building systems that are reliable, scalable, and easy to maintain.
+
+**What we deliver:**
+• Custom workflow automation tailored to your business needs
+• Integration with your existing software stack (CRM, ERP, databases, APIs)
+• Intelligent document processing and data extraction
+• Automated reporting and data synchronization
+• Process monitoring and optimization tools
+
+**Ideal for:** Companies looking to reduce operational overhead, eliminate human error in repetitive tasks, and scale operations without proportionally increasing headcount.`,
+    useCases: ["Document processing automation", "Data entry and migration", "Multi-system integrations", "Workflow orchestration"]
   },
   {
     icon: Workflow,
     title: "AI Assistants & Agentic Workflows",
-    description: "Autonomous agents that handle complex multi-step processes with human-like reasoning and decision-making."
+    shortDescription: "Autonomous agents that handle complex multi-step processes with intelligent decision-making.",
+    fullDescription: `Build AI assistants and agentic systems that work autonomously while maintaining human oversight where it matters most. Our agents can handle complex, multi-step processes that require reasoning, decision-making, and adaptation.
+
+These aren't simple chatbots—they're sophisticated systems that can research, analyze, plan, execute, and learn from outcomes. We design them with human-in-the-loop checkpoints, ensuring critical decisions always have human validation.
+
+**What we deliver:**
+• Autonomous AI agents for specific business functions
+• Multi-step workflow automation with intelligent routing
+• Context-aware decision-making systems
+• Self-improving systems that learn from outcomes
+• Human oversight and intervention points
+
+**Ideal for:** Teams that need intelligent automation for complex processes like research, analysis, customer onboarding, or multi-department coordination.`,
+    useCases: ["Research and analysis agents", "Customer onboarding automation", "Intelligent routing systems", "Multi-department coordination"]
   },
   {
     icon: BarChart3,
     title: "Decision-Support & Analytics Engines",
-    description: "Real-time intelligence systems that transform data into actionable insights for better business decisions."
+    shortDescription: "Real-time intelligence systems that transform data into actionable insights.",
+    fullDescription: `Turn your data into a competitive advantage with AI-powered decision-support systems. We build analytics engines that process large volumes of data in real-time, identifying patterns, predicting outcomes, and recommending actions.
+
+Our systems don't just show you what happened—they help you understand why it happened and what you should do next. We combine data analysis, predictive modeling, and business logic to create systems that support better decision-making at every level.
+
+**What we deliver:**
+• Real-time data processing and analysis systems
+• Predictive analytics and forecasting models
+• Automated insight generation and reporting
+• Custom dashboards and visualization tools
+• Recommendation engines for business decisions
+
+**Ideal for:** Organizations with significant data assets looking to make faster, more informed decisions. Particularly valuable for operations, finance, marketing, and strategic planning teams.`,
+    useCases: ["Predictive analytics", "Real-time business intelligence", "Automated reporting", "Decision recommendation systems"]
   },
   {
     icon: Zap,
     title: "Custom AI Tooling",
-    description: "Tailored AI solutions for internal operations or customer-facing use cases, built using the same frameworks powering our products."
+    shortDescription: "Tailored AI solutions built using the same frameworks powering our products.",
+    fullDescription: `When off-the-shelf solutions don't fit, we build custom AI tools specifically for your needs. We use the same frameworks, principles, and engineering practices that power our own products, ensuring you get production-grade systems.
+
+Whether it's internal tooling to improve your team's productivity or customer-facing features that differentiate your product, we build with modularity, scalability, and maintainability in mind.
+
+**What we deliver:**
+• Custom AI models and algorithms for your specific use case
+• Internal productivity tools and automation
+• Customer-facing AI features and capabilities
+• Integration with existing systems and workflows
+• Ongoing maintenance and optimization
+
+**Ideal for:** Companies with unique requirements that can't be met by existing solutions, or those looking to build AI capabilities as a core differentiator.`,
+    useCases: ["Custom AI models", "Internal productivity tools", "Customer-facing AI features", "Specialized automation"]
   }
 ];
 
 const ServicesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedService, setSelectedService] = useState<number | null>(null);
 
   return (
     <section id="services" className="relative py-32 overflow-hidden bg-quantum/20">
@@ -58,10 +119,6 @@ const ServicesSection = () => {
               Beyond our internal products, we offer selective, high-quality custom AI and automation work. 
               We build using the same frameworks and principles that power our own products.
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neural/30 bg-neural/10 backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm text-ivory/80">Selective • High-Quality • AI-First</span>
-            </div>
           </motion.div>
 
           {/* Services Grid */}
@@ -72,7 +129,8 @@ const ServicesSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group card-glass rounded-2xl p-8 hover-lift border border-neural/20 hover:border-neural/40 transition-all"
+                className="group card-glass rounded-2xl p-8 hover-lift border border-neural/20 hover:border-neural/40 transition-all cursor-pointer"
+                onClick={() => setSelectedService(index)}
               >
                 <div className="w-12 h-12 rounded-xl bg-neural/20 flex items-center justify-center mb-6 group-hover:bg-neural/30 transition-colors">
                   <service.icon className="w-6 h-6 text-neural" />
@@ -81,11 +139,64 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
+                  {service.shortDescription}
                 </p>
+                <div className="mt-4 text-xs text-neural/60 group-hover:text-neural transition-colors">
+                  Click to learn more →
+                </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Service Detail Dialog */}
+          <Dialog open={selectedService !== null} onOpenChange={(open) => {
+            if (!open) setSelectedService(null);
+          }}>
+            <DialogContent className="max-w-3xl max-h-[80vh] border-neural/30 bg-background/95 backdrop-blur-xl">
+              {selectedService !== null && (() => {
+                const ServiceIcon = services[selectedService].icon;
+                return (
+                  <>
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-ivory flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-neural/20 flex items-center justify-center">
+                          {ServiceIcon && (
+                            <ServiceIcon className="w-5 h-5 text-neural" />
+                          )}
+                        </div>
+                        {services[selectedService].title}
+                      </DialogTitle>
+                    <DialogDescription className="text-muted-foreground">
+                      {services[selectedService].shortDescription}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <ScrollArea className="max-h-[60vh] pr-4">
+                    <div className="space-y-4 mt-4">
+                      <div className="prose prose-invert max-w-none">
+                        <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
+                          {services[selectedService].fullDescription}
+                        </p>
+                      </div>
+                      {services[selectedService].useCases && (
+                        <div className="pt-4 border-t border-neural/20">
+                          <h4 className="text-sm font-semibold text-ivory mb-3">Common Use Cases:</h4>
+                          <ul className="space-y-2">
+                            {services[selectedService].useCases.map((useCase, idx) => (
+                              <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                                <span className="text-neural mt-1">•</span>
+                                <span>{useCase}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </ScrollArea>
+                  </>
+                );
+              })()}
+            </DialogContent>
+          </Dialog>
 
           {/* CTA */}
           <motion.div

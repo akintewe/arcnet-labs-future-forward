@@ -1,27 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import brandPattern1 from "@/assets/patterns/Brand Pattern 1.svg";
+import heroMockup from "@/assets/hero-mockup.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Brand Pattern Background - Prominent */}
-      <div 
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `url(${brandPattern1})`,
-          backgroundSize: '400px 400px',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: '0 0',
-        }}
-      />
-      
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        style={{ backgroundImage: `url(${heroMockup})` }}
       />
       
       {/* Gradient Overlays */}
@@ -40,23 +28,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neural/30 bg-neural/10 backdrop-blur-sm mb-8"
-          >
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-ivory/80">AI-First Engineering Lab</span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
+            style={{ lineHeight: '1.2', overflow: 'visible' }}
           >
             <span className="text-gradient">Building Practical AI</span>
             <br />
@@ -80,7 +58,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
           >
             <Button variant="hero" size="xl" className="group" onClick={() => {
               document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
