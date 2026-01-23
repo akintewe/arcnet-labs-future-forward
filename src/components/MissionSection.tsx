@@ -93,7 +93,7 @@ const MissionSection = () => {
     <section id="mission" className="relative py-40 overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:opacity-20 opacity-10"
         style={{
           backgroundImage: "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop)",
           backgroundPosition: "center"
@@ -101,7 +101,7 @@ const MissionSection = () => {
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90 dark:from-background/90 dark:via-background/70 dark:to-background/90" />
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-neural/5 blur-[150px]" />
@@ -137,13 +137,13 @@ const MissionSection = () => {
                       <h3 className="text-2xl md:text-3xl font-semibold text-neural mb-8">
                         {page.title}
                       </h3>
-                      <div className="space-y-2">
+          <div className="space-y-2">
                         {page.content.map((line, lineIndex) => (
                           <p
                             key={lineIndex}
                             className={`text-2xl md:text-3xl lg:text-4xl font-bold leading-tight ${
                               lineIndex === 1 || lineIndex === 2
-                                ? "text-gradient-violet"
+                    ? "text-gradient-violet"
                                 : "text-foreground"
                             }`}
                           >
@@ -170,14 +170,14 @@ const MissionSection = () => {
             <div className="flex justify-center gap-2">
               {missionPages.map((_, i) => (
                 <button
-                  key={i}
+                key={i}
                   onClick={() => api?.scrollTo(i)}
                   className={`h-2 rounded-full transition-all ${
                     i + 1 === current ? "bg-neural w-8" : "bg-neural/40 w-2"
                   }`}
                   aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
+              />
+            ))}
             </div>
             <span className="text-xs text-muted-foreground">
               {current} of {missionPages.length}

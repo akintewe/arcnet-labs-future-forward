@@ -25,7 +25,7 @@ const products = [
     tagline: "Chess Intelligence for Serious Players",
     description: "A consumer-facing chess intelligence product designed to help players analyze games, improve performance, and gain deeper insights into their play.",
     status: "In Development",
-    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
+    statusColor: "bg-green-500/30 dark:text-green-300 text-green-700 border-green-400/50 dark:border-green-400/50 font-semibold",
     gradient: "from-neural/20 to-quantum/20",
     targetAudience: "Chess players seeking to improve their game"
   },
@@ -36,7 +36,7 @@ const products = [
     tagline: "AI-Powered Journey Intelligence",
     description: "An AI-powered journey and workflow intelligence product focused on mapping, understanding, and optimizing user or business journeys.",
     status: "In Development",
-    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
+    statusColor: "bg-green-500/30 dark:text-green-300 text-green-700 border-green-400/50 dark:border-green-400/50 font-semibold",
     gradient: "from-rose/20 to-neural/20",
     targetAudience: "Teams and businesses optimizing workflows"
   },
@@ -47,7 +47,7 @@ const products = [
     tagline: "Prospect Intelligence Engine",
     description: "A prospect intelligence engine that searches the web for ideal clients, qualifies prospects, and automates personalized outreach.",
     status: "In Development",
-    statusColor: "bg-green-500/30 text-green-300 border-green-400/50 font-semibold",
+    statusColor: "bg-green-500/30 dark:text-green-300 text-green-700 border-green-400/50 dark:border-green-400/50 font-semibold",
     gradient: "from-quantum/20 to-rose/20",
     targetAudience: "Sales and business development teams"
   }
@@ -124,7 +124,7 @@ const ProductsSection = () => {
             <span className="text-neural text-sm font-semibold tracking-widest uppercase mb-4 block">
               Our Products
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               AI Products
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -158,7 +158,7 @@ const ProductsSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-2xl font-semibold text-ivory mb-2 group-hover:text-gradient-violet transition-all">
+                  <h3 className="text-2xl font-semibold text-foreground mb-2 group-hover:text-gradient-violet transition-all">
                     {product.name}
                   </h3>
                   <p className="text-sm text-neural/80 mb-3 font-medium">
@@ -200,7 +200,7 @@ const ProductsSection = () => {
       }}>
         <DialogContent className="max-w-md border-neural/30 bg-background/95 backdrop-blur-xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-ivory">
+            <DialogTitle className="text-2xl font-bold text-foreground">
               Join {product?.name} Waitlist
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
@@ -211,7 +211,7 @@ const ProductsSection = () => {
           
           <form onSubmit={handleWaitlistSubmit} className="space-y-4 mt-4">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-ivory">Email</Label>
+              <Label htmlFor="email" className="text-foreground">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -223,7 +223,7 @@ const ProductsSection = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-ivory">
+              <Label htmlFor="message" className="text-foreground">
                 Tell us about your interest (optional)
               </Label>
               <Textarea

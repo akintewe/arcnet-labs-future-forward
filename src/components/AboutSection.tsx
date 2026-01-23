@@ -37,7 +37,7 @@ const AboutSection = () => {
       <div className="absolute top-0 left-0 right-0 section-divider" />
       {/* Moving Brand Pattern 2 */}
       <motion.div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 dark:opacity-20 opacity-10"
         style={{
           backgroundImage: `url(${brandPattern2})`,
           backgroundSize: '400px 400px',
@@ -67,7 +67,7 @@ const AboutSection = () => {
             <span className="text-neural text-sm font-semibold tracking-widest uppercase mb-4 block">
               About Arcnet Labs
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Product Studio & Solutions Lab
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ const AboutSection = () => {
                 <div className="w-14 h-14 rounded-xl bg-neural/20 flex items-center justify-center mb-6 group-hover:bg-neural/30 transition-colors">
                   <feature.icon className="w-7 h-7 text-neural" />
                 </div>
-                <h3 className="text-xl font-semibold text-ivory mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

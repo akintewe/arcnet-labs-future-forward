@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { submitContactForm } from "@/api/contact";
 import contactBg from "@/assets/images/social-media/arc Lab 14.png";
 
 const ContactSection = () => {
@@ -32,30 +33,31 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API endpoint
-      console.log('Contact form submission:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const result = await submitContactForm(formData);
 
-      toast({
-        title: "Message sent! 🎉",
-        description: "We'll get back to you within 24 hours.",
-      });
+      if (result.success) {
+        toast({
+          title: "Message sent! 🎉",
+          description: "We'll get back to you within 24 hours.",
+        });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        projectType: "",
-        message: "",
-      });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          projectType: "",
+          message: "",
+        });
+      } else {
+        throw new Error(result.error || 'Failed to submit form');
+      }
       
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Contact form error:', error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: error.message || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -67,7 +69,7 @@ const ContactSection = () => {
     <section id="contact" className="relative py-32 overflow-hidden scroll-mt-28">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-no-repeat opacity-60"
+        className="absolute inset-0 bg-cover bg-no-repeat dark:opacity-60 opacity-30"
         style={{ 
           backgroundImage: `url(${contactBg})`,
           backgroundPosition: 'center bottom'

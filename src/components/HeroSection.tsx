@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:opacity-40 opacity-20"
         style={{ backgroundImage: `url(${heroMockup})` }}
       />
       
@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-neural/10 blur-[120px] animate-pulse-glow" />
       
       {/* Grid Pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-15" />
+      <div className="absolute inset-0 grid-pattern dark:opacity-15 opacity-5" />
       
       {/* Noise Overlay */}
       <div className="absolute inset-0 noise-overlay" />
@@ -38,7 +38,7 @@ const HeroSection = () => {
           >
             <span className="text-gradient">Building Practical AI</span>
             <br />
-            <span className="text-ivory">for Everyone</span>
+            <span className="text-foreground">for Everyone</span>
           </motion.h1>
 
           {/* Subtext */}

@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
-import logoWordMark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
+import { useTheme } from "next-themes";
+import logoWordMarkDark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
+import logoWordMarkLight from "@/assets/logo/word-mark/logo-word-mark-light.svg";
 
 const Footer = () => {
+  const { theme, resolvedTheme } = useTheme();
+  const logoWordMark = (resolvedTheme || theme) === 'light' ? logoWordMarkLight : logoWordMarkDark;
+  
   return (
     <footer className="relative py-16 border-t border-border/50 bg-background">
       <div className="container px-6 md:px-8">

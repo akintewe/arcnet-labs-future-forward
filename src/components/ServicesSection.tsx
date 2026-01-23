@@ -93,7 +93,7 @@ const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null);
 
   return (
-    <section id="services" className="relative py-32 overflow-hidden bg-quantum/20">
+    <section id="services" className="relative py-32 overflow-hidden dark:bg-quantum/20 bg-quantum/5">
       {/* Background */}
       <div className="absolute inset-0 noise-overlay opacity-30" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neural/50 to-transparent" />
@@ -112,7 +112,7 @@ const ServicesSection = () => {
             <span className="text-neural text-sm font-semibold tracking-widest uppercase mb-4 block">
               Custom Work
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               AI Systems & Automation
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -135,7 +135,7 @@ const ServicesSection = () => {
                 <div className="w-12 h-12 rounded-xl bg-neural/20 flex items-center justify-center mb-6 group-hover:bg-neural/30 transition-colors">
                   <service.icon className="w-6 h-6 text-neural" />
                 </div>
-                <h3 className="text-xl font-semibold text-ivory mb-3 group-hover:text-gradient-violet transition-all">
+                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-gradient-violet transition-all">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -158,7 +158,7 @@ const ServicesSection = () => {
                 return (
                   <>
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-ivory flex items-center gap-3">
+                      <DialogTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-neural/20 flex items-center justify-center">
                           {ServiceIcon && (
                             <ServiceIcon className="w-5 h-5 text-neural" />
@@ -179,7 +179,7 @@ const ServicesSection = () => {
                       </div>
                       {services[selectedService].useCases && (
                         <div className="pt-4 border-t border-neural/20">
-                          <h4 className="text-sm font-semibold text-ivory mb-3">Common Use Cases:</h4>
+                          <h4 className="text-sm font-semibold text-foreground mb-3">Common Use Cases:</h4>
                           <ul className="space-y-2">
                             {services[selectedService].useCases.map((useCase, idx) => (
                               <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">

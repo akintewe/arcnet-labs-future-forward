@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoWordMark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
+import { useTheme } from "next-themes";
+import logoWordMarkDark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
+import logoWordMarkLight from "@/assets/logo/word-mark/logo-word-mark-light.svg";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
@@ -16,6 +18,8 @@ const navItems = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+  const logoWordMark = (resolvedTheme || theme) === 'light' ? logoWordMarkLight : logoWordMarkDark;
 
   useEffect(() => {
     const handleScroll = () => {

@@ -30,7 +30,7 @@ const PhilosophySection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="philosophy" className="relative py-32 overflow-hidden bg-quantum/30">
+    <section id="philosophy" className="relative py-32 overflow-hidden dark:bg-quantum/30 bg-quantum/10">
       {/* Background */}
       <div className="absolute inset-0 noise-overlay" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neural/50 to-transparent" />
@@ -59,7 +59,7 @@ const PhilosophySection = () => {
             transition={{ duration: 1 }}
             className="text-center mb-24"
           >
-            <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-tight">
+            <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               <span className="text-neural">"</span>
               We don't build with AI as an add-on.
               <br />
@@ -82,7 +82,7 @@ const PhilosophySection = () => {
                   {principle.number}
                 </span>
                 <div>
-                  <h3 className="text-2xl font-semibold text-ivory mb-3">
+                  <h3 className="text-2xl font-semibold text-foreground mb-3">
                     {principle.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
