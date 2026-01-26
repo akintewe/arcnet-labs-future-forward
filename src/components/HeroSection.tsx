@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroMockup from "@/assets/hero-mockup.png";
+import heroBg from "@/assets/images/hero-bg.png";
 
 const HeroSection = () => {
   return (
@@ -9,7 +9,7 @@ const HeroSection = () => {
       {/* Background Image Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:opacity-40 opacity-20"
-        style={{ backgroundImage: `url(${heroMockup})` }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       />
       
       {/* Gradient Overlays */}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           >
             <span className="text-gradient">Building Practical AI</span>
             <br />
-            <span className="text-foreground">for Everyone</span>
+            <span className="text-foreground">For Everyone</span>
           </motion.h1>
 
           {/* Subtext */}

@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -92,16 +92,16 @@ const MissionSection = () => {
   return (
     <section id="mission" className="relative py-40 overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:opacity-20 opacity-10"
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat dark:opacity-40 opacity-25"
         style={{
           backgroundImage: "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop)",
           backgroundPosition: "center"
         }}
       />
-      
+
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90 dark:from-background/90 dark:via-background/70 dark:to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/70 dark:from-background/70 dark:via-background/50 dark:to-background/70" />
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-neural/5 blur-[150px]" />
@@ -121,35 +121,37 @@ const MissionSection = () => {
           </motion.div>
 
           {/* Carousel */}
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-[350px]">
             <Carousel setApi={setApi} className="w-full">
               <CarouselContent className="relative [&>*]:transition-opacity [&>*]:duration-800 [&>*]:ease-in-out">
                 {missionPages.map((page, pageIndex) => (
-                  <CarouselItem 
-                    key={pageIndex} 
+                  <CarouselItem
+                    key={pageIndex}
                     className="relative"
-                    style={{ 
+                    style={{
                       opacity: pageIndex + 1 === current ? 1 : 0,
                       transition: 'opacity 0.8s ease-in-out'
                     }}
                   >
-                    <div className="text-center space-y-4 min-h-[400px] flex flex-col justify-center">
-                      <h3 className="text-2xl md:text-3xl font-semibold text-neural mb-8">
-                        {page.title}
-                      </h3>
-          <div className="space-y-2">
-                        {page.content.map((line, lineIndex) => (
-                          <p
-                            key={lineIndex}
-                            className={`text-2xl md:text-3xl lg:text-4xl font-bold leading-tight ${
-                              lineIndex === 1 || lineIndex === 2
-                    ? "text-gradient-violet"
-                                : "text-foreground"
-                            }`}
-                          >
-                            {line}
-                          </p>
-                        ))}
+                    <div className="min-h-[350px] flex items-center justify-center px-4">
+                      <div className="card-glass rounded-2xl p-8 md:p-10 max-w-2xl w-full">
+                        <h3 className="text-lg md:text-xl font-semibold text-neural mb-6 text-center">
+                          {page.title}
+                        </h3>
+                        <div className="space-y-1">
+                          {page.content.map((line, lineIndex) => (
+                            <p
+                              key={lineIndex}
+                              className={`text-base md:text-lg lg:text-xl font-medium leading-relaxed text-center ${
+                                lineIndex === 1 || lineIndex === 2
+                                  ? "text-gradient-violet"
+                                  : "text-foreground/90"
+                              }`}
+                            >
+                              {line}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </CarouselItem>

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import logoWordMarkDark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
-import logoWordMarkLight from "@/assets/logo/word-mark/logo-word-mark-light.svg";
+import logoWordMarkDark from "@/assets/logo/logo-wordmark-dark.svg";
+import logoWordMarkLight from "@/assets/logo/logo-wordmark-light.svg";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [

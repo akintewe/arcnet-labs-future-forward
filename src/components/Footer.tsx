@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import logoWordMarkDark from "@/assets/logo/word-mark/logo word Mark Transparent.svg";
-import logoWordMarkLight from "@/assets/logo/word-mark/logo-word-mark-light.svg";
+import logoWordMarkDark from "@/assets/logo/logo-wordmark-dark.svg";
+import logoWordMarkLight from "@/assets/logo/logo-wordmark-light.svg";
 
 const Footer = () => {
   const { theme, resolvedTheme } = useTheme();
