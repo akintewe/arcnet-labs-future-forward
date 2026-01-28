@@ -40,13 +40,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container px-6 md:px-8">
-        <div className="flex items-center justify-between h-36 md:h-40">
+        <div className="flex items-center justify-between h-32 lg:h-40">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 overflow-visible">
             <img
               src={logoWordMark}
               alt="Arcnet Labs"
-              className="h-40 md:h-52 lg:h-60 w-auto object-contain transition-all duration-300"
+              className="h-28 lg:h-52 xl:h-60 w-auto object-contain transition-all duration-300"
               style={{
                 objectFit: 'contain',
                 maxHeight: 'none',
@@ -57,7 +57,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -77,7 +77,7 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Menu Button & Theme Toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <ThemeToggle />
           <button
               className="p-2 text-foreground"
@@ -93,7 +93,7 @@ const Navbar = () => {
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-6 border-t border-border/50 bg-background"
+            className="lg:hidden py-6 border-t border-border/50 bg-background"
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (

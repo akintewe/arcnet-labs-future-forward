@@ -5,8 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
@@ -122,19 +120,19 @@ const MissionSection = () => {
 
           {/* Carousel */}
           <div className="relative min-h-[350px]">
-            <Carousel setApi={setApi} className="w-full">
-              <CarouselContent className="relative [&>*]:transition-opacity [&>*]:duration-800 [&>*]:ease-in-out">
+            <Carousel setApi={setApi} className="w-full" opts={{ align: "center" }}>
+              <CarouselContent className="relative ml-0 [&>*]:transition-opacity [&>*]:duration-800 [&>*]:ease-in-out">
                 {missionPages.map((page, pageIndex) => (
                   <CarouselItem
                     key={pageIndex}
-                    className="relative"
+                    className="relative basis-full pl-0"
                     style={{
                       opacity: pageIndex + 1 === current ? 1 : 0,
                       transition: 'opacity 0.8s ease-in-out'
                     }}
                   >
-                    <div className="min-h-[350px] flex items-center justify-center px-4">
-                      <div className="card-glass rounded-2xl p-8 md:p-10 max-w-2xl w-full">
+                    <div className="min-h-[350px] flex items-center justify-center w-full">
+                      <div className="card-glass rounded-2xl p-8 md:p-10 max-w-2xl w-full mx-auto">
                         <h3 className="text-lg md:text-xl font-semibold text-neural mb-6 text-center">
                           {page.title}
                         </h3>
@@ -157,8 +155,6 @@ const MissionSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4 md:left-8" />
-              <CarouselNext className="right-4 md:right-8" />
             </Carousel>
           </div>
 
