@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import logoWordMarkDark from "@/assets/logo/logo-wordmark-dark.svg";
-import logoWordMarkLight from "@/assets/logo/logo-wordmark-light.svg";
+import logoWordMark from "@/assets/logo/logo-wordmark.svg";
 
 const Footer = () => {
   const { theme, resolvedTheme } = useTheme();
-  const logoWordMark = (resolvedTheme || theme) === 'light' ? logoWordMarkLight : logoWordMarkDark;
+  const isLightMode = (resolvedTheme || theme) === 'light';
   
   return (
     <footer className="relative py-16 border-t border-border/50 bg-background">
@@ -19,10 +18,11 @@ const Footer = () => {
               transition={{ duration: 0.8 }}
               className="text-center md:text-left"
             >
-              <img 
-                src={logoWordMark} 
-                alt="Arcnet Labs" 
-                className="h-20 md:h-24 lg:h-28 w-auto mb-4 mx-auto md:mx-0"
+              <img
+                src={logoWordMark}
+                alt="Arcnet Labs"
+                className="h-28 md:h-36 lg:h-44 w-auto mb-4 mx-auto md:mx-0 transition-all duration-300"
+                style={{ filter: isLightMode ? 'invert(1)' : 'none' }}
               />
               <p className="text-base md:text-lg text-muted-foreground mb-4">
                 Engineering the future of AI systems.

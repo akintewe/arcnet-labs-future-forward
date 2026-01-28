@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import logoWordMarkDark from "@/assets/logo/logo-wordmark-dark.svg";
-import logoWordMarkLight from "@/assets/logo/logo-wordmark-light.svg";
+import logoWordMark from "@/assets/logo/logo-wordmark.svg";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
@@ -19,7 +18,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, resolvedTheme } = useTheme();
-  const logoWordMark = (resolvedTheme || theme) === 'light' ? logoWordMarkLight : logoWordMarkDark;
+  const isLightMode = (resolvedTheme || theme) === 'light';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +34,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+        isScrolled || isMobileMenuOpen
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -44,11 +43,16 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-36 md:h-40">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 overflow-visible">
-            <img 
-              src={logoWordMark} 
-              alt="Arcnet Labs" 
-              className="h-24 md:h-32 w-auto object-contain"
-              style={{ objectFit: 'contain', maxHeight: 'none', paddingBottom: '4px', lineHeight: '1.2' }}
+            <img
+              src={logoWordMark}
+              alt="Arcnet Labs"
+              className="h-40 md:h-52 lg:h-60 w-auto object-contain transition-all duration-300"
+              style={{
+                objectFit: 'contain',
+                maxHeight: 'none',
+                paddingBottom: '4px',
+                filter: isLightMode ? 'invert(1)' : 'none'
+              }}
             />
           </a>
 
@@ -89,7 +93,7 @@ const Navbar = () => {
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-6 border-t border-border/50"
+            className="md:hidden py-6 border-t border-border/50 bg-background"
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
