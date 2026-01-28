@@ -174,7 +174,7 @@ const ProductsSection = () => {
                   {/* CTA */}
                   <Button
                     variant="outline"
-                    className="w-full group/btn border-neural/30 hover:border-neural hover:bg-neural/10"
+                    className="w-full group/btn border-neural/30 hover:border-neural hover:bg-neural/10 text-foreground hover:text-foreground"
                     onClick={() => setSelectedProduct(product.id)}
                   >
                     Join Waitlist
